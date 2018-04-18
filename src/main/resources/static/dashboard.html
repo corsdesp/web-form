@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./styles/custom-style.css" rel="stylesheet">
+
+    <title>KinoTver Dashboard</title>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Admin panel</span>
+</nav>
+<br>
+<div class="container">
+    <form class="col-lg-8 offset-lg-2" method="POST" action="/add">
+        <div class="card bg-light">
+            <h6 class="card-header">Название фильма</h6>
+            <div class="container">
+                <input type="text" class="form-control custom-marg" id="movieTitleInput">
+            </div>
+        </div>
+        <br>
+
+        <div class="card bg-light">
+            <h6 class="card-header">Описание</h6>
+            <div class="container">
+                <textarea class="form-control custom-marg" id="descriptionTextInput" rows="3"></textarea>
+            </div>
+        </div>
+        <br>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <div class="card bg-light">
+                    <h6 class="card-header">Рейтинг фильма</h6>
+                    <input type="text" class="form-control" id="movieRatingInput"
+                           style="margin-top: 10px; margin-bottom: 10px;">
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <div class="card bg-light">
+                    <h6 class="card-header">Возрастной рейтинг</h6>
+                    <input type="text" class="form-control" id="ageRaringInput"
+                           style="margin-top: 10px; margin-bottom: 10px;">
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                <div class="card bg-light">
+                    <h6 class="card-header">Продолжительность</h6>
+                    <input type="text" class="form-control" id="durabilityInput"
+                           style="margin-top: 10px; margin-bottom: 10px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-6">
+                <div class="card">
+                    <h6 class="card-header">Poster</h6>
+                    <div class="container">
+                        <input type="file" class="file-input custom-marg" id="posterFile"
+                               placeholder="Выбрать на диске">
+                        <input type="text" class="form-control custom-marg" id="posterUrl"
+                               placeholder="URL в сети">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <h6 class="card-header">Horizontal Poster</h6>
+                    <div class="container">
+                        <input type="file" class="file-input custom-marg" id="horizontalPosterFile"
+                               placeholder="Выбрать на диске">
+                        <input type="text" class="form-control custom-marg" id="horizontalPosterUrl"
+                               placeholder="URL в сети">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="card bg-light">
+            <h6 class="card-header">Кадры из фильма</h6>
+            <div class="container">
+                <div class="form-group">
+                    <div class="images-form">
+                        <div class="entry input-group" style="margin-top: 1em;">
+                            <input type="text" class="form-control" id="imagesInput1">
+                            <span class="input-group-btn">
+                        <button class="btn btn-success btn-add" type="button">
+                            <span class="fa fa-plus"></span>
+                        </button>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="card bg-light">
+            <h6 class="card-header">Директор</h6>
+            <div class="container">
+                <div class="form-group">
+                    <div class="director-form">
+                        <div class="entry input-group" style="margin-top: 1em;">
+                            <input type="text" class="form-control" id="director1">
+                            <span class="input-group-btn">
+                        <button class="btn btn-success btn-add" type="button">
+                            <span class="fa fa-plus"></span>
+                        </button>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="card bg-light">
+            <h6 class="card-header">Актеры</h6>
+            <div class="container">
+                <div class="form-group">
+                    <div class="actors-form">
+                        <div class="entry input-group" style="margin-top: 1em;">
+                            <input type="text" class="form-control" id="actor1">
+                            <span class="input-group-btn">
+                        <button class="btn btn-success btn-add" type="button">
+                            <span class="fa fa-plus"></span>
+                        </button>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="card bg-light">
+            <h6 class="card-header">Продюсер</h6>
+            <div class="container">
+                <div class="form-group">
+                    <div class="producers-form">
+                        <div class="entry input-group" style="margin-top: 1em;">
+                            <input type="text" class="form-control" id="producer1">
+                            <span class="input-group-btn">
+                        <button class="btn btn-success btn-add" type="button">
+                            <span class="fa fa-plus"></span>
+                        </button>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="form-row">
+            <div class="col-md-6">
+                <div class="card bg-light">
+                    <h6 class="card-header">Страны</h6>
+                    <div class="container">
+                        <div class="form-group">
+                            <div class="countries-form">
+                                <div class="entry input-group" style="margin-top: 1em;">
+                                    <input type="text" class="form-control" id="country1">
+                                    <span class="input-group-btn">
+                        <button class="btn btn-success btn-add2" type="button">
+                            <span class="fa fa-plus"></span>
+                        </button>
+                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="col-md-6">
+                <div class="card bg-light">
+                    <h6 class="card-header">Жанры</h6>
+                    <div class="container">
+                        <div class="form-group">
+                            <div class="genres-form">
+                                <div class="entry input-group" style="margin-top: 1em;">
+                                    <input type="text" class="form-control" id="genre1">
+                                    <span class="input-group-btn">
+                        <button class="btn btn-success btn-add1" id="btnGen" type="button">
+                            <span class="fa fa-plus"></span>
+                        </button>
+                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary float-right">Сохранить</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+<script src="./scripts/add-input.js"></script>
+</body>
+</html>
